@@ -11,16 +11,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var home_component_1 = require("./home/home.component");
+var login_component_1 = require("./login/login.component");
+var game_component_1 = require("./game/game.component");
 var routes = [
     {
         path: "",
-        redirectTo: "/home",
+        redirectTo: "/login",
         pathMatch: "full"
     },
     {
         path: "home",
         component: home_component_1.HomeComponent
     },
+    {
+        path: "login",
+        component: login_component_1.LoginComponent
+    },
+    {
+        path: "game",
+        component: game_component_1.GameComponent
+    }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

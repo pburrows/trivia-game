@@ -8,21 +8,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = "Online Trivia";
+var core_1 = require('@angular/core');
+var DataService = (function () {
+    function DataService() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: "my-app",
-            // providers: [HeroService],
-            styleUrls: ['app/app.component.ts'],
-            template: "\n<h1>{{title}}</h1>\n<router-outlet></router-outlet>\n"
-        }), 
+    DataService.prototype.getUserName = function () {
+        var userId = window.localStorage.getItem("user-id");
+        if (!userId) {
+            return null;
+        }
+        return firebase.database().ref("users").child(userId).once("value");
+    };
+    DataService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], DataService);
+    return DataService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.DataService = DataService;
+//# sourceMappingURL=data.service.js.map

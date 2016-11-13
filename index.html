@@ -7,16 +7,28 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ng2 Start</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
+
+    <!-- CDNs -->
+    <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAmJyT-3JSLMgvpAxqhrzYjlnTbmxdMlUs",
+            authDomain: "trivia-game-45614.firebaseapp.com",
+            databaseURL: "https://trivia-game-45614.firebaseio.com",
+            storageBucket: "trivia-game-45614.appspot.com",
+            messagingSenderId: "298594548720"
+        };
+        firebase.initializeApp(config);
+    </script>
 
     <!-- Polyfill(s) for older browsers -->
     <script src="node_modules/core-js/client/shim.min.js"></script>
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
-
-    <!-- CDNs -->
-    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
 
     <!-- 2. Configure SystemJS -->
     <script src="systemjs.config.js"></script>

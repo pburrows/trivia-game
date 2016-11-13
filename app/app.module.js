@@ -12,10 +12,12 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
-var core_2 = require("ng2-firebase/core");
 var app_routing_module_1 = require('./app-routing.module');
+var data_service_1 = require("./shared/data.service");
 var app_component_1 = require('./app.component');
 var home_component_1 = require("./home/home.component");
+var login_component_1 = require("./login/login.component");
+var game_component_1 = require("./game/game.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -25,14 +27,15 @@ var AppModule = (function () {
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
                 http_1.HttpModule,
-                app_routing_module_1.AppRoutingModule,
-                core_2.FirebaseModule.forRoot({ url: 'https://myfirebaseurl.firebase.io' })
+                app_routing_module_1.AppRoutingModule
             ],
             declarations: [
                 app_component_1.AppComponent,
-                home_component_1.HomeComponent
+                home_component_1.HomeComponent,
+                login_component_1.LoginComponent,
+                game_component_1.GameComponent
             ],
-            // providers: [ HeroService ],
+            providers: [data_service_1.DataService],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

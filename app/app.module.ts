@@ -3,27 +3,29 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 
-import {FirebaseModule} from "ng2-firebase/core";
-
 import { AppRoutingModule } from './app-routing.module';
+
+import {DataService} from "./shared/data.service";
 
 import { AppComponent }         from './app.component';
 import {HomeComponent} from "./home/home.component";
-
+import {LoginComponent} from "./login/login.component";
+import {GameComponent} from "./game/game.component";
 
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
         HttpModule,
-        AppRoutingModule,
-        FirebaseModule.forRoot({ url: 'https://myfirebaseurl.firebase.io' })
+        AppRoutingModule
     ],
     declarations: [
         AppComponent,
-        HomeComponent
+        HomeComponent,
+        LoginComponent,
+        GameComponent
     ],
-    // providers: [ HeroService ],
+    providers: [ DataService ],
     bootstrap: [ AppComponent ]
 })
 export class AppModule { }

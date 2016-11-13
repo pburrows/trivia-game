@@ -9,27 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var data_service_1 = require("../shared/data.service");
-var HomeComponent = (function () {
-    function HomeComponent(dataService) {
-        var _this = this;
-        this.dataService = dataService;
-        this.dataService.getUserName()
-            .then(function (snapshot) {
-            _this.currentUser = snapshot.val().name;
-        });
+var GameComponent = (function () {
+    function GameComponent() {
     }
-    HomeComponent.prototype.ngOnInit = function () {
+    GameComponent.prototype.ngOnInit = function () {
     };
-    HomeComponent = __decorate([
+    GameComponent = __decorate([
         core_1.Component({
-            selector: "trivia-home",
-            providers: [data_service_1.DataService],
-            template: '<h1>Hello {{currentUser}}</h1>'
+            selector: "trivia-game",
+            template: '<h1>Hello</h1>'
         }), 
-        __metadata('design:paramtypes', [data_service_1.DataService])
-    ], HomeComponent);
-    return HomeComponent;
+        __metadata('design:paramtypes', [])
+    ], GameComponent);
+    return GameComponent;
 }());
-exports.HomeComponent = HomeComponent;
-//# sourceMappingURL=home.component.js.map
+exports.GameComponent = GameComponent;
+//# sourceMappingURL=game.component.js.map
